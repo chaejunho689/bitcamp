@@ -7,7 +7,6 @@ public class ExamMain {
 	private static int count = 0;
 	
 	
-	인원수. 
 	public static void main(String[] args) {
 		Exam ex = new Exam();
 	}
