@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- http://localhost:8080/HTML5/htlm/exam09RESULT.html -->
+	<form method="get" action="./exam09RESULT.html">
+		<fieldset>
+			<legend>이름 입력하기</legend>
+			<div>
+				<label for="user_name">이름 : </label>
+				<input type="text" name="_name" id="user_name"> <!-- name 속성으로 넘어감 -->
+			</div>
+			
+			<br>
+			
+			<div>
+				<input type="submit" value="입력완료"> <!-- action을 찾아서 떠난다 -->
+				<input type="reset" value="초기화">
+				<input type="button" value="입력완료" 
+						onclick="javascript:location.href='./exam09RESULT.html'"> <!--  onclick -->
+						
+				<!-- input type="image" =>> 이미지가 자동으로 submit  -->
+				<input type="image" src="../image/ok.png" width="30" height="30" alt="OK">
+				<!-- input type="image" =>> 보내버리고 싶지 않다면 onclick return false -->
+				<input type="image" src="../image/ok.png" width="30" height="30" alt="OK" onclick="return false">
+				<img alt="OK" src="../image/ok.png" width="30" height="30">		
+				
+			</div>
+		</fieldset>
+	</form>
+</body>
+</html>
