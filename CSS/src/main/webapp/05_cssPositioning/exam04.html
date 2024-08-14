@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	* {
+		padding : 0;
+		margin : 0;
+	}
+	
+	body {
+		font : 12px Tahoma, sans-serif;
+	}
+	li {
+		list-style: none;
+	}	
+	#wrap {
+		width: 800px;
+		background-color: silver;
+		margin: 0 auto;
+	}
+	#header {
+		background-color: red;
+	}
+	#container {
+	 	background-color: cyan;
+	}
+	
+	#container:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+	.nav {
+		float : left;
+		background-color: lime;
+	}
+	.content {
+		float : right;
+		background-color: lime;
+		width: 600px;
+	}
+	.footer {
+		background-color: green;
+		margin-top: 30px;
+	}
+		
+</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="header">
+			<h1> LOGO </h1>	
+			<p> this Website is...</p>
+		</div> <!-- header -->
+		<div id="container">
+			<div class="nav">
+				<h2>Navigation</h2>
+				<ul>
+					<li><a href="#">Menu 1</a></li>
+					<li><a href="#">Menu 2</a></li>
+					<li><a href="#">Menu 3</a></li>
+				</ul>
+			</div>
+	
+			<div class="content"> 
+				<p> 
+					Pellentesque habitant morbi tristique senectus et netus     et malesuada fames 
+	                ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit
+	                amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi 
+	                vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper 
+	                pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, 
+	                wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, 
+	                sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. 
+	                Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, 
+	                eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt 
+	                quis, accumsan porttitor, facilisis luctus, metus
+				</p>
+			</div> <!-- content -->
+		</div><!-- container -->
+		<div id="footer">
+			<address>  Seoul, Koprea</address>
+		</div>
+	</div>
+</body>
+</html>
+
+<!-- 
+	float 속성
+	1) left, right
+		float를 지정하면 다음에 오는 컨텐츠가 float를 지정한 블록 주위를 감싸게 된다.
+		html 요소 중에서 인라인 요소나 블록 요소는 그 결과가 무척 다르다. 
+	  그러나, float를 지정하면 두 요소는 같은 결과를 보여준다. 
+	  인라인 요소가 블록 요소처럼 크기를 지정할 수 있게 된다.
+	2) clear 속성
+		float를 해지한다.
+		clear: left;        /* float: left; 해지 /
+		clear: right;        /
+		float: right; 해지 /
+		clear: both;        /
+		float: left;, float: right; 둘 다 해지 */
+-->
