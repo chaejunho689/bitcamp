@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1 class="myid"> 안녕하세요. </h1>
+	<h1 class="myid"> 자바스크립트입니다. </h1>
+	<h1 class="myid"> 참 재미있죠 ? </h1>
+	<a href="#" onclick="doPrint()"> 자바스크립트 함수 호출하기 </a>
+	
+<script type="text/javascript">
+	/*
+	var getClass = document.getElementsByClassName.bind(document);
+	var mytag = getClass(".myid");
+	*/
+	var mytag = document.querySelectorAll(".myid");
+	alert(mytag);
+	
+	function doPrint() {
+		for(var i = 0; i < mytag.length; i++) {
+			mytag[i].innerText = "스크립트가 실행되었습니다."
+		}
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button id ="question" onclick="question()"> 문제 생성 </button>
+	<span id = "random1"> ? </span>  
+	<span> + </span>
+	<span id = "random2"> ? </span>
+	<span> = </span>
+	<span id = "result"> ? </span>
+	<button id ="result" onclick="result()"> 결과 보기 </button>
+	
+	 
+<script type="text/javascript">
+function question() {
+	var random1 = Math.floor(Math.random() * 10+1);
+	var random2 = Math.floor(Math.random() * 10+1);
+
+	var random1_tag = document.getElementById("random1");
+	var random2_tag = document.getElementById("random2");
+	
+	random1_tag.innerText = random1;
+	random2_tag.innerText = random2;
+	
+	
+	var result = random1 + random2;
+	var result_tag = document.getElementById("result");
+	result_tag.innerText = "?";
+}
+
+function result() {
+	var random1 = parseInt(document.getElementById("random1").innerText);
+	var random2 = parseInt(document.getElementById("random2").innerText);
+	
+	if(isNaN(random1) || isNaN(random2)) {
+		alert("문제를 먼저 생성하세요.");		
+		return;
+	} 
+	
+
+	var result = random1 + random2;
+	var result_tag = document.getElementById("result");
+	
+	result_tag.innerHTML = "<font style='color: red;'>" + result + "</font>";
+}
+</script>
+</body>
+</html>
