@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+const a = 100;
+//a = 250; const는 재할당이 불가함 
+
+console.log(a); //  100
+{
+	const a = 200; // 새롭게 선언해서만 가능
+	console.log(a); //200
+	{
+		const a = 300;
+		console.log(a); // 300
+		{
+			const a = 400;
+			console.log(a); // 400
+		}
+		console.log(a) // 300
+	}
+	console.log(a) // 200
+}
+console.log(a) // 100
+
+</script>
+</body>
+</html>

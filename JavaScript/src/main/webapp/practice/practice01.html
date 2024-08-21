@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	h1 {
+		text-align: center;
+	}
+	span {
+		display: block;
+		text-align: center;
+	}
+</style>
+<script type="text/javascript">
+var user_num;
+var num_list = [];
+var mok;
+
+function numinput() {
+	user_num = prompt("몇 까지 3의 배수를 찾을까요?");
+	calc(user_num);
+}
+
+function calc(x) {
+	if(x >= 3) {
+		mok = x / 3;
+	} else {
+		mok = 0;
+	}
+	mok = Math.floor(mok);
+	
+	for(var i = 1; i <= mok; i++) {
+		num_list[i] = 3 * i;
+	}
+	
+	print();
+}
+
+function print() {
+	var getClass = document.getElementsByClassName.bind(document);
+	var numspan = getClass("numspan");
+	var dapspan = getClass("dapspan");
+	var sumspan = getClass("sumspan");
+	var sum_result = 0;
+	
+	for(var i = 1; i < num_list.length; i++) {
+		numspan[0].innerHTML +=  num_list[i];
+		sum_result = num_list[i] + sum_result;
+		if(i < num_list.length - 1) {
+			numspan[0].innerHTML +=  ",   ";
+		}
+	}
+	dapspan[0].innerHTML ="<font style='color:red; font-size : 1.5em;' /> " + user_num + "까지 3의 배수의 개수 : " + mok;
+	sumspan[0].innerHTML ="<font style='color:red; font-size : 1.5em;' /> " + user_num + "까지 3의 배수의 합 : " + sum_result;
+}
+
+</script>
+</head>
+<body onload="numinput()">
+<h1> 3의 배수 찾기 </h1>
+<br>
+<span class = "numspan"> </span>
+<br>
+<span class = "dapspan"> </span>
+<span class = "sumspan"> </span>
+</body>
+</html>

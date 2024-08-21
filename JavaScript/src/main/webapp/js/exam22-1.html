@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	let today = new Date();
+	let time = today.getTime(); // 기본날짜(1970년 1월 1일 자정) 이후 (밀리세컨드 까지)
+	
+	document.write(`time = ${time} <br/>`); 
+	document.write(`${ Math.round(time/(60*60*24*1000))}일`);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body onload="inputDate()">
+
+<span id ="print">
+
+</span>
+<script type="text/javascript">
+	function inputDate() {
+        const today = new Date(); // 현재 날짜
+		var user_input;
+		
+		user_input = prompt("날짜를 입력하세요.(xxxx/xx/xx)");
+		var arr = user_input.split('/');
+
+        const year = parseInt(arr[0]);
+        const month = parseInt(arr[1]) - 1; // 월은 0부터 시작하므로 -1
+        const day = parseInt(arr[2]);
+
+        // 사용자 입력에 따라 날짜 객체 생성
+        const dday = new Date(year, month, day);
+		const diffday = today.getTime() - dday.getTime();
+		var result = Math.ceil(diffday / (1000 * 60 * 60 * 24));
+		
+		document.getElementById("print").innerText = "오늘까지 우리는 " + result + "일이다.";
+
+	}
+	
+
+</script>
+</body>
+</html>
+
+<!-- 
+practice03.html
+[문제] 연인과의 날짜 계산
+- prompt() 를 사용하여 날짜를 입력한다.
+- 만난날부터 오늘까지의 일을 계산한다.
+
+오늘까지 우리는 XX일이다. 
+-->
