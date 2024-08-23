@@ -6,25 +6,23 @@
 <link rel="stylesheet" type="text/css" href="../css/event.css">
 </head>
 <body>
-	<h1>Hover 이벤트 확인하기</h1>
-	<div id="input">Mouse Over or Out</div>
+	<h1>key 이벤트 확인하기</h1>
+	<div id="input">
+		<input type="text"/>
+	</div>
 	<h2>결과</h2>
 	<div id="result"></div>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"> </script>
 <script type="text/javascript">
 $(function(){
-	var down_count = 0;
-	var up_count = 0;
+	$('#input > input[type="text"]').focus();
 	
-	$('#input > input[type="text"]'.keydown(function(){
-		down_count++;
-		$("#result").html("down_count : " + down_count )
-	}))
-	
-	$('#input > input[type="text"]'.keyup(function(){
-		up_count++;
-	$("#result").html("up_count : " + up_count )
-	}))
+	$('#input > input[type="text"]').focus(function(){
+		$('#result').html('포커스가 들어갔습니다.');
+	});
+	$('#input > input[type="text"]').blur(function(){
+		$('#result').html('포커스가 나갔갔습니다.');
+	});
 });
 </script>
 </body>
