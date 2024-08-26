@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+body {
+    background: #252422;
+}
+ul {
+    padding: 0;
+    margin: 50px auto;
+    list-style: none;
+    width: 800px;
+}
+.title {
+    padding: 0;
+    margin: 0;
+}
+.title > a {
+    display: block;
+    padding-top: 12px;
+    font-size: 14px;
+    text-indent: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    height: 23px;
+    background: url('../image/background.jpg');
+}
+.selected {
+    background: url('../image/background-selected.jpg') !important;
+}
+.content {
+    margin: 0;
+    background: #D4D0C8;
+    padding: 10px;
+    height: 200px;
+    overflow-y: auto;
+}
+</style>
+
+</head>
+<body>
+	<ul>
+		<li class="collapsible">
+			<h2 class="title"><a href="../txt/html5.txt"> HTML5 </a></h2>
+			<p class="content"></p>
+		</li>
+		<li class="collapsible">
+			<h2 class="title"><a href="../txt/jquery.txt"> jquery </a></h2>
+			<p class="content"></p>
+		</li>
+		<li class="collapsible">
+			<h2 class="title"><a href="../txt/bootstrap.txt"> bootstrap </a></h2>
+			<p class="content"></p>
+		</li>
+	</ul>
+		
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	var i 
+	for(var i = 0; i < $('.collapsible').length; i++) {
+		$('.collapsible:eq(' + i + ') .content').load($('.collapsible:eq(' + i + ') .title a').attr('href'));
+		
+		if(i ==  0) {
+			$('.collapsible:eq(' + i + ') a').addClass('selected');
+		}
+	}
+	
+	$('.collapsible .title a').click(function(){
+		$(this).toggleClass('selected');
+		$()
+		
+		
+	});
+	
+
+	
+	return false; 
+	
+});
+</script>
+</body>
+</html>
+
+<!-- 
+$().css('display')
+=> display 속성은 요소를 어떻게 보여줄지를 결정한다
+
+① none : 보이지 않음
+② block
+③ inline
+④ inline-block
+ -->

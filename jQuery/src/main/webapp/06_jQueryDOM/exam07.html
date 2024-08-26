@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="demo2">
+		<button>add</button>
+		<ul>
+			<li>test1</li>
+			<li>test2</li>
+			<li>test3</li>
+		</ul>
+	</div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$('#demo2 li').bind('click', function(){
+		alert($(this).text());
+	});
+
+	/*
+	var i = 0;
+	$('#demo2 button').bind('click', function(){
+		$('#demo2 ul').append('<li> added' + i + '</li>');
+		i++;
+	});
+	*/
+	$('#demo2 button').bind('click', function(){
+		$('#demo2 li').unbind('click');
+		$('#demo2 ul').append('<li> added</li>').find($('li')).click(function(){
+			alert($(this).text());
+		})
+	});
+	
+});
+</script>
+</body>
+</html>
+
+<!-- 
+bind가 deprecated 되었으므로 비추천, bind를 대신해서 on으로 사용한다.
+bind로 연결 된 이벤트는 unbind()로 제거하고, on로 연결된 이벤트는 off()로 제거한다. 
+-->
