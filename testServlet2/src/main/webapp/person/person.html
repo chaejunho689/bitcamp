@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	table {
+		border-collapse : collapse;
+	}
+</style>
+</head>
+<body>
+
+<form action="http://localhost:8080/testServlet2/person" id="data" method="get">
+	<table style="border : 1px solid black;">
+		<tr>
+			<th style="width: 70px;"> 이름 </th>
+			<td> <input type="text" name="name"> 
+			<th style="width: 70px;"> 나이 </th>
+			<td colspan="2"> <input type="text" name="age" size="7"> 
+		</tr>	
+		<tr>
+			<th> <button type="submit" form="data"> 보내기 </button> </th>
+			<th> <button type="reset"> 취소 </button> </th>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

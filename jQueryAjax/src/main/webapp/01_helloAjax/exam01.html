@@ -1,0 +1,58 @@
+<!-- AJAX 와 jQuery 연동해서 사용하기  -->
+<!-- TEXT파일 가져오기 -->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/reset.css">
+</head>
+<body>
+	<h1 class="title">$.ajax() 함수를 이용한 TEXT 읽기</h1>
+	<div class="exec">
+		<input type="button" value="txt파일 가져오기" id="mybtn">
+	</div>
+	<div class="console" id="result"></div>
+	
+	
+	
+	
+	<div>
+		AJAX의 특징
+		비동기, 화면 이동 X
+		라이브러리가 필요가 없다.   => jQuery는 라이브러리(CDN방식)가 필요함
+			
+	</div>
+</body>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$('#mybtn').click(function() {
+		//jQuery.ajax({}); 와 $.ajax({}); 같음
+		$.ajax({
+			type : 'get',		// 서버 요청 방식 [get/post]
+			//'http://localhost:8080/JQueryAjax; => 톰켓 :Context명 , 이클립스: Project명
+			url : 'http://localhost:8080/JQueryAjax/text/text01.txt', // 서버에 요청할 주소
+			dataType : 'text', 	// 서버로부터 받는 데이터의 자료형  [text(문자열)/xml/json]   => 숫자도 문자열로 들어옴(변환필요)
+			success : function(data){ 		// 200:성공, 400:파라메타오류, 404:, 405:서비스 오류, 500:코드에러(서버에러)
+				$('#result').html(data)
+			},
+			error: function(xhr, textStatus, errorThrown){
+                $('div').html('<div>' + textStatus + '(HTTP-' + xhr.status + '/' +  errorThrown + ')' + '</div>');
+            }
+			
+		  
+		});
+	});
+});
+
+</script>
+</html>
+
+
+ 

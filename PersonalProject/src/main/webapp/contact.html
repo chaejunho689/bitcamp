@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CHAE JUNHO</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link rel="stylesheet" href="./css/global.css" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="./js/common.js" defer></script>
+<style type="text/css">
+
+	.container { 
+		padding-top : 25px;
+	}
+	
+	#board_no{
+		width: 5%;
+	}
+	
+	#board_name{
+		width: 10%;
+	}
+	
+	#board_title{
+		width: 50%;
+	}
+	
+	#board_number{
+		width: 15%;
+	}
+	
+	#board_date{
+		width: 20%;
+	}
+	
+	
+	
+</style>
+</head>
+<body>
+
+<!-- 공통 GNB -->
+<div id="gnb-placeholder"></div>
+
+<div class="container">
+
+    <!-- 글쓰기 버튼 -->
+    <div class="d-flex justify-content-end mb-3">
+        <a href="write.html" class="btn btn-primary write-btn"  >글쓰기</a>
+    </div>
+    
+    <div class="row">
+        <div class="col-12 mb-3 mb-5">
+            <div class="overflow-hidden card table-nowrap table-card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">CONTACT LIST</h5>
+                </div>
+                <div class="table-responsive">
+                    <table class="table mb-0">
+                        <thead class="small text-uppercase bg-body text-muted">
+                            <tr>
+                                <th id="board_no">No</th>
+                                <th id="board_name">Name</th>
+                                <th id="board_title">Title</th>
+                                <th id="board_hit">hit</th>
+                                <th id="board_date">Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        	<!-- 동적 태그 추가 위치 -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function() {
+    // 페이지 로드 시 게시글 목록 로드
+
+    $(document).ready(function() {
+        $.ajax({
+            type: 'GET',
+            url: './jsp/boardlist.jsp', // JSP 경로 설정
+            dataType: 'json',
+            success: function(data) {
+                console.log(data); // JSON 데이터를 콘솔에 출력
+                
+                // 데이터가 있는 경우 테이블에 추가
+                $.each(data, function(index, item) {
+                    let row = `
+	                        <tr class="align-middle clickable-row" data-href="view.html?board_no=${item.board_no}">
+	                       	 	<td>${index + 1}</td> <!-- 순서대로 번호 매기기 -->
+		                        <td>${item.board_author}</td> 
+		                        <td>${item.board_title}</td>
+		                        <td>${item.board_hit}</td>
+		                        <td>${item.board_date}</td>
+		                    </tr>`;
+                     $('table tbody').append(row);
+                });
+                
+                $(".clickable-row").click(function() {
+                    window.location.href = $(this).data("href");
+                });
+            },
+            error: function(e) {
+                console.log(e);
+            }
+        });
+    });
+});
+</script>
+</body>
+</html>
+

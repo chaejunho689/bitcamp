@@ -1,0 +1,89 @@
+<!--
+ 달력에 날자 고르는거 같은거 
+ 쇼핑몰 카테고리 위에 보이는 거  
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/reset.css">
+</head>
+<body>
+	<h1 class="title">동적 드롭다운</h1>
+	<div class="exec">
+		<form action="">
+			<!-- 각 단계별 dropdown을 표시할 span태그 -->
+			<span id="category1"></span>
+			<span id="category2"></span>
+			<span id="category3"></span>
+		</form>
+	</div>
+	
+	<div class="console"></div>
+	
+</body>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	// 1depth
+	$('#category1').load('../txt/category-data.html #category1-1', function() { // 파일의 일부분만 로드해오는 방법
+		$(this).show();
+	});
+	
+	// 2 depth (동적 처리) : 1번이 바뀌었을대
+	// 동적처리 : $(조상).on('이벤트',후손);
+	$(document).on('change','#category1 > select', function() {
+		$('#category2, .console').empty();
+		$('#category3').empty();
+		
+		var target = $(this).find('option:selected').attr('data-target');
+		console.log(target);
+		
+		$('#category2').load('../txt/category-data.html ' + target, function() {
+			$(this).show();
+		});
+	});
+	
+	
+	// 3 depth (동적처리) : 2번이 바뀌었을때
+	// 동적처리 : $(조상).on('이벤트',후손);
+	$(document).on('change', '#category2 > select', function() {
+		$('#category3').empty();
+		
+		var target = $(this).find('option:selected').attr('data-target');		
+		console.log(target);
+		// 개발자가 만든 속성
+		 // 특 : data-
+		 // data-target
+		
+		
+		$('#category3').load('../txt/category-data.html '+ target, function() {
+			$(this).show();
+		});
+	})
+	
+	
+	// 4 depth[마지막 선택] (동적처리) : 3번이 바뀌엇을때
+	// 동적처리 : $(조상).on('이벤트',후손);
+	$(document).on('change','#category3 > select', function() {
+		if($(this).find('option:selected').index() > 0 ){
+			var data1 = $('#category1 > select > option:selected').val();
+			var data2 = $('#category2 > select > option:selected').val();
+			var data3 = $('#category3 > select > option:selected').val();
+			
+			console.log(data1 + data2 + data3);
+			
+			$('.console').html(data1 +'&gt;' + data2 +'&gt;' + data3);
+		}
+	});
+
+});
+</script>
+</html>
+
+
+ 

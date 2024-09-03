@@ -1,0 +1,80 @@
+<!-- JSP : html + java -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/reset.css">
+</head>
+<body>
+	<h1 class="title">$.ajax() 함수를 이용한 텍스트 읽기</h1>
+	<div class="exec">
+		<input type="button" value="txt파일 가져오기" id="mybtn">
+	</div>
+	<div class="console" id="result"></div>
+	
+	
+	
+</body>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$('#mybtn').click(function() {
+		$.ajax({
+			type: 'get',
+			url: '../text/textdata.jsp', // url?parameter  =>   ../text/textdata.jsp?변수=값&변수=값
+			// 위에 방법이 아니라면 아래처럼 
+			// 방법1. '='이용하기
+			//data: 'keyword=Hello AJAX!!',	//'변수=값&변수=값', // 요기서 data는 예약어, 공백도 상관없음.
+			// 방법2. json
+			data : {
+				'keyword': 'Hello Ajax!!'
+			},
+			
+			success: function(data) { // data는 아무거나 상관없음.위의 data랑 관련 없음
+				$('#result').html(data);
+			},
+			error: function(e) {
+				console.log(e);
+			}
+			
+			
+		});
+	});
+
+});
+
+
+</script>
+</html>
+
+
+
+
+
+
+<!--
+
+
+AJAX JQuery 연결
+
+클라이언트 : [html, css, java script]       >>>>>>>>요청>>>>>>>     서버  [request]
+									    <<<<<<<<응답<<<<<<<           [response]
+
+
+
+
+exam03.html 에 적용하면 
+
+클라이언트(exam03.html)											서버(textdata.jsp)
+	keyword:hello 	>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>			request.getParameter("keyword") 또는 ${param.keyword} 
+
+
+
+
+ -->
+
+ 

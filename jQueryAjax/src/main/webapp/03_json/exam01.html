@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1 class="title"> $.ajax() 함수를 사용한 JSON 데이터 읽기(1) </h1>
+	<div class="exec">
+		<input type="button" value="JSON 데이터 가져오기" id="mybtn" />
+	</div>
+	<div class="console" id="result"></div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$('#mybtn').click(function(){
+		$.ajax({
+			type : 'get',
+			url : '../json/json01.json',
+			dataType : 'json', //서버로부터 반환되는 데이터 타입
+			success: function(data){},
+			error : function(e) {
+				console.log(e);
+				console.log(data);
+				
+				var shortData = data.school.subject;
+				
+				let title = shortData.title;
+				let time = shortData.time;
+				let teacher = shortData.teacher;
+				
+				/* (1) 태그만들어서 append로 붙이는 방법 
+				let div = $('<div/>');
+				let p1 = $('<p/>').html(title);
+				let p2 = $('<p/>').html(time);
+				let p3 = $('<p/>').html(teacher);
+				
+				// 메소드 체인
+				div.append(p1).append(p2).append(p3);
+				*/
+				
+				/* (2) 백틱(`) 방법*/
+				let div = 	`<div/>` +
+							`<p>` + title + `<\p>` +
+							`<p>` + time + `<\p>` +
+							`<p>` + teacher + `<\p>` +
+							`</div>`;
+							
+				//div 를 id="result"에 붙이기
+				$('#result').append(div);
+			},
+			error : function(e) {
+				console.log(e)
+			}
+		})		
+	})
+});
+</script>
+
+</body>
+</html>

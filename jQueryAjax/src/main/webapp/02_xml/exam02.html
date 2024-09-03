@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/reset.css">
+</head>
+<body>
+	<h1 class="title">$.ajax() 함수를 이용한 XML 읽기2</h1>
+	<div class="exec">
+		<input type="button" value="txt파일 가져오기" id="mybtn">
+	</div>
+	<div class="console" id="result"></div>
+		
+</body>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$('#mybtn').click(function() {
+		$.ajax({
+			type: 'get',
+			url: '../xml/xml02.xml',
+			dataType: 'xml',
+			success: function(data) {
+								
+				let subject = $(data).find('subject');
+				
+				console.log(subject.length);
+				console.log(subject.children.length);
+				console.log(subject.eq(0).find('teacher').text()); // FOR문 쓰면 이거 이용
+				
+				// FOR문 대신 each()
+				subject.each(function() {
+					let title = $(this).find('title').text();
+					let time = $(this).find('time').text();
+					let teacher = $(this).find('teacher').text();
+					
+					// append대신 `을 사용하기  => 선생님은 줄 아끼기 위해서 `을 선호함
+					let div = `<div>`;
+					div += `<p>`+ title +`</p>`;
+					div += `<p>`+ time +`</p>`;
+					div += `<p>`+ teacher +`</p>`;
+					div += `</div>`;
+					div += `<hr>`;
+					
+					$('#result').append(div);
+					
+					
+					
+				}); //subject.each()
+			}, 
+			error: function(e) {
+				console.log(e);
+			}
+			
+		});
+	});
+});
+</script>
+</html>
+
+
+ 
