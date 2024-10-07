@@ -1,0 +1,31 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+		
+	<bean id="messageBeanImpl" class="sample01.MessageBeanImpl">
+		<property name="str" value="have a nice day"></property>
+	</bean>
+	
+	<bean id="loggingAdvice" class="sample01.LoggingAdvice"></bean>
+
+	<!-- 	AOP 	-->
+	<aop:config>
+<!--	<aop:pointcut expression="execution(public *[int, void 등 섞여있으면] sample01.MessageBeanImpl.*Before(..[매개변수있으면]))" id=""/> -->
+		<aop:pointcut expression="execution(public void sample01.MessageBeanImpl.*Before())" id="beforeMethod"/>
+		<aop:pointcut expression="execution(public * *.*.*After(..))" id="afterMethod"/>
+<!-- 											모든return type, 모든 package, 모든 class, 모든 parameter -->
+		<aop:pointcut expression="execution(public * *.MessageBeanImpl.*Print(..))" id="aroundMethod"/>
+		
+		<!-- 공통코드 -->
+		<aop:aspect ref="loggingAdvice"> 
+		  <aop:before method="beforeTrace" pointcut-ref="beforeMethod"/>
+		  <aop:after method="afterTrace" pointcut-ref="afterMethod"/>
+		  <aop:around method="trace" pointcut-ref="aroundMethod"/>
+		</aop:aspect>
+				
+	</aop:config>
+</beans>

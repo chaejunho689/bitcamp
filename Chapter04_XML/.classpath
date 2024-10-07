@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+  <classpathentry kind="src" path="src"/>
+  <classpathentry kind="output" path="target/classes"/>
+  <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-jdbc/5.3.37/spring-jdbc-5.3.37.jar" sourcepath="M2_REPO/org/springframework/spring-jdbc/5.3.37/spring-jdbc-5.3.37-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-beans/5.3.37/spring-beans-5.3.37.jar" sourcepath="M2_REPO/org/springframework/spring-beans/5.3.37/spring-beans-5.3.37-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-core/5.3.37/spring-core-5.3.37.jar" sourcepath="M2_REPO/org/springframework/spring-core/5.3.37/spring-core-5.3.37-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-jcl/5.3.37/spring-jcl-5.3.37.jar" sourcepath="M2_REPO/org/springframework/spring-jcl/5.3.37/spring-jcl-5.3.37-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-tx/5.3.37/spring-tx-5.3.37.jar" sourcepath="M2_REPO/org/springframework/spring-tx/5.3.37/spring-tx-5.3.37-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/commons/commons-collections4/4.4/commons-collections4-4.4.jar" sourcepath="M2_REPO/org/apache/commons/commons-collections4/4.4/commons-collections4-4.4-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/commons/commons-dbcp2/2.9.0/commons-dbcp2-2.9.0.jar" sourcepath="M2_REPO/org/apache/commons/commons-dbcp2/2.9.0/commons-dbcp2-2.9.0-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/commons/commons-pool2/2.10.0/commons-pool2-2.10.0.jar" sourcepath="M2_REPO/org/apache/commons/commons-pool2/2.10.0/commons-pool2-2.10.0-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/commons-logging/commons-logging/1.2/commons-logging-1.2.jar" sourcepath="M2_REPO/commons-logging/commons-logging/1.2/commons-logging-1.2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/mysql/mysql-connector-j/8.3.0/mysql-connector-j-8.3.0.jar" sourcepath="M2_REPO/com/mysql/mysql-connector-j/8.3.0/mysql-connector-j-8.3.0-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar" sourcepath="M2_REPO/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-context/5.3.37/spring-context-5.3.37.jar" sourcepath="M2_REPO/org/springframework/spring-context/5.3.37/spring-context-5.3.37-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-aop/5.3.37/spring-aop-5.3.37.jar" sourcepath="M2_REPO/org/springframework/spring-aop/5.3.37/spring-aop-5.3.37-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-expression/5.3.37/spring-expression-5.3.37.jar" sourcepath="M2_REPO/org/springframework/spring-expression/5.3.37/spring-expression-5.3.37-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/aspectj/aspectjweaver/1.9.22.1/aspectjweaver-1.9.22.1.jar" sourcepath="M2_REPO/org/aspectj/aspectjweaver/1.9.22.1/aspectjweaver-1.9.22.1-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/aspectj/aspectjrt/1.9.22.1/aspectjrt-1.9.22.1.jar" sourcepath="M2_REPO/org/aspectj/aspectjrt/1.9.22.1/aspectjrt-1.9.22.1-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/projectlombok/lombok/1.18.28/lombok-1.18.28.jar" sourcepath="M2_REPO/org/projectlombok/lombok/1.18.28/lombok-1.18.28-sources.jar"/>
+</classpath>
