@@ -1,0 +1,12 @@
+package stream;
+
+class Food {
+	String name;
+	int calorie;
+}
+
+public class StreamMain02 {
+	public static void main(String[] args) {
+		
+	}
+}

@@ -1,0 +1,16 @@
+package stream;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class StreamMain {
+	public static void main(String[] args) {
+		List<String> list = new ArrayList<String>();
+		list.add("이재훈");
+		list.add("엄태구");
+		list.add("이동욱");
+		list.add("안효섭");
+		list.add("이준기");
+		list.add("나연우");
+	}
+}

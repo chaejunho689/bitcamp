@@ -43,22 +43,27 @@
 	
 <!-- 	property = setter -->
 	<bean id="userInsertService" class="user.service.UserInsertService" >
-		<property name="userDTO" ref="userDTO"> </property>
-		<property name="userDAO" ref="userDAOImpl"> </property>
 	</bean>
-	
 	
 	<bean id="userSelectService" class="user.service.UserSelectService" >
 		<property name="userDAO" ref="userDAOImpl"> </property>
 	</bean>
 	
-	<bean id="userDTO" class="user.bean.UserDTO">	</bean>
-	<bean id="userDAOImpl" class="user.dao.UserDAOImpl">
-		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	<bean id="userUpdateService" class="user.service.UserUpdateService" >
+		<property name="userDAO" ref="userDAOImpl"/>
+	</bean>
+	<bean id="userDeleteService" class="user.service.UserDeleteService" >
+		<property name="userDAO" ref="userDAOImpl"/>
 	</bean>
 	
-	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
-		<constructor-arg ref="dataSource"></constructor-arg>
+	<bean id="userDTO" class="user.bean.UserDTO">	</bean>
+	<bean id="userDAOImpl" class="user.dao.UserDAOImpl">
+<!-- 		<property name="jdbcTemplate" ref="jdbcTemplate"></property> -->
+		<property name="dataSource" ref="dataSource"></property>
 	</bean>
+	
+<!-- 	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate"> 
+ 		<constructor-arg ref="dataSource"></constructor-arg>
+ 	</bean> -->
 	
 </beans>

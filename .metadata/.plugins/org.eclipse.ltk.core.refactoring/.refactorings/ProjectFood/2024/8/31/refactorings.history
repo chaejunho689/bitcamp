@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 4 elements to &apos;semi_fd_service/src/food.service&apos;&#x0D;&#x0A;- Original project: &apos;ProjectFood&apos;&#x0D;&#x0A;- Destination element: &apos;semi_fd_service/src/food.service&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     food.service.SelectMain.java&#x0D;&#x0A;     food.service.SearchMain.java&#x0D;&#x0A;     food.service.OrderInfo.java&#x0D;&#x0A;     food.service.OrderMain.java" description="Copy compilation units" destination="=semi_fd_service/src&lt;food.service" element1="/src&lt;food.service{SelectMain.java" element2="/src&lt;food.service{SearchMain.java" element3="/src&lt;food.service{OrderInfo.java" element4="/src&lt;food.service{OrderMain.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1722481946743" units="4" version="1.0"/>
+</session>

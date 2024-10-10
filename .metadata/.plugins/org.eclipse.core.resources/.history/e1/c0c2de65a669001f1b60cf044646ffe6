@@ -1,0 +1,27 @@
+package com.guestbook.service;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/write")
+public class GuestbookWriteServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	
+	public GuestbookWriteServlet() {
+		//Oracle 드라이버로딩
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		 String name = request.getParameter("name");
+		 String email = request.getParameter("");
+		 String homepage = request.getParameter("");
+		 String  = request.getParameter("");
+		 String  = request.getParameter("");
+		 String  = request.getParameter("");
+	}
+
+}

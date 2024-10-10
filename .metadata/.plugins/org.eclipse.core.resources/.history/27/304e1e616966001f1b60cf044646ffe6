@@ -1,0 +1,20 @@
+package Account;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter	
+public class AccountDTO {
+	private int user_code; 				// 회원가입 회원번호 
+
+		private String user_id; 			// 회원가입 아이디 
+		private String user_pw; 			// 회원가입 비밀번호 
+		private String user_name; 			// 회원가입 이름
+		private String user_phone_number; 	// 회원가입 휴대전화번호
+		private String user_address; 		// 회원가입 주소
+		private String user_email; 			// 회원가입 이메일
+
+		
+		
+}

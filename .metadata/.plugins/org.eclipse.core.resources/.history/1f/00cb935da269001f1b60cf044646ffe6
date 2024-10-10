@@ -1,0 +1,10 @@
+package com.guestbook.bean;
+
+public class GuestbookDTO {
+	private String name;
+	private String email;
+	private String homepage;
+	private String subject;
+	private String email;
+	
+}

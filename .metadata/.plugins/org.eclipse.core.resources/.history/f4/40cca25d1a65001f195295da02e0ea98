@@ -1,0 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces="true" %>
+
+<%
+	String nu, = request.getParameter("num");
+
+	//고유한 값인 num(key)로 DB에서 삭제한다.
+	boolean result 
+	
+%>

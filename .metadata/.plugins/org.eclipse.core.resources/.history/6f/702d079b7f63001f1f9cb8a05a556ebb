@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="demo2">
+		<button>add</button>
+		<ul>
+			<li>test1</li>
+			<li>test2</li>
+			<li>test3</li>
+		</ul>
+	</div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	
+	var i 
+	
+	$('#demo2 li').bind('click', function(){
+
+		alert($(this).text());
+	});
+
+
+	$('#demo2 button').bind('click', function(){
+		$('#demo2 ul').append('<li> added' + i + '</li>');
+		i++;
+	});
+	
+});
+</script>
+</body>
+</html>

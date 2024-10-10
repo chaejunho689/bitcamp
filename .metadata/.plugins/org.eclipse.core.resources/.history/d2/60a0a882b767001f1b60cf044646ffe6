@@ -1,0 +1,32 @@
+<%@page import="Account.AccountDTO"%>
+<%@page import="Account.AccountDAO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces="true" %> <%-- XML태그 시작전의 공백 제거 --%>
+<%
+
+	String login_id = request.getParameter("login_id");
+	String login_pw = request.getParameter("login_pw");
+	String result = "";
+	
+	boolean loginSuccess = true; // 로그인 검증 로직에 따라 설정
+	String userId = "someUserId"; // 실제 사용자 ID로 대체
+	
+	if (loginSuccess) {
+	    response.setContentType("application/json");
+	    response.setCharacterEncoding("UTF-8");
+	    response.getWriter().write("{\"status\": \"success\", \"userId\": \"" + userId + "\"}");
+	} else {
+	    response.setContentType("application/json");
+	    response.setCharacterEncoding("UTF-8");
+	    response.getWriter().write("{\"status\": \"fail\"}");
+	}
+	
+	AccountDAO accountDAO = new AccountDAO();
+	
+	String loginResult = accountDAO.login(login_id, login_pw);
+	
+	out.print(loginResult);
+%>
+<%=result %>
+

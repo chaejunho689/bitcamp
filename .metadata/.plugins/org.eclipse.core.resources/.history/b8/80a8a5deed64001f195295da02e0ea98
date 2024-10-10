@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="">
+		<fieldset>
+			<legend>로그인</legend>
+			<div>
+				<label for="user_id"> 아이디 </label>
+				<input type="text" name="user_id" id="user_id"/>
+			</div>
+			<div>
+				<label for="user_password"> 비밀번호 </label>
+				<input type="password" name="user_password" id="user_password"/>
+			</div>
+			<div>
+				<input type="submit" value="로그인"/>
+			</div>
+			<div class="loader">
+				<img src="../image/loader.gif"/>
+			</div>
+		</fieldset>
+	</form>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$('#user_id, #user_password').bind({
+		'focus': function(){
+			$(this).addClass('active');
+		},
+		'blur' : function(){
+			$(this).removeClass('active');
+		},
+	});
+	
+	$('#login').bind('click', function(){
+		
+	})
+});
+</script>
+</body>
+</html>

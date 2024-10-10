@@ -1,0 +1,16 @@
+import java.io.FileWriter;
+import java.io.IOException;
+import com.google.gson.Gson;
+
+public class AccountDAO {
+    public void saveAccountAsJson(AccountDTO account) {
+        Gson gson = new Gson();
+        String json = gson.toJson(account);
+
+        try (FileWriter writer = new FileWriter("./webapp/json/account.json")) {
+            writer.write(json);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}

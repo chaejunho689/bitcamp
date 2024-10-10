@@ -1,0 +1,23 @@
+package Account;
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class AccountDAO {
+    public void saveAccountAsJson(AccountDTO account) {
+        // StringBuilder를 이용해 JSON 형식의 문자열을 만듭니다.
+        StringBuilder json = new StringBuilder();
+        json.append("{\n");
+        json.append("  \"username\": \"").append(account.getUsername()).append("\",\n");
+        json.append("  \"password\": \"").append(account.getPassword()).append("\",\n");
+        json.append("  \"email\": \"").append(account.getEmail()).append("\"\n");
+        json.append("}");
+
+        // 파일로 JSON 저장
+        try (FileWriter writer = new FileWriter("./webapp/json/account.json")) {
+            writer.write(json.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}

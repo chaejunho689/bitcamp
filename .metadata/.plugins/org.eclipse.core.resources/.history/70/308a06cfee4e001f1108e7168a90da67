@@ -1,0 +1,38 @@
+package network;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.Socket;
+
+public class ChatHandler {
+	ChatServer chatServer;
+	Socket socket;
+	DataInputStream dis;
+	DataOutputStream dos;
+	String chatName;
+	String clientIp;
+
+	public ChatHandler(ChatServer chatServer, Socket socket2) {
+		this.chatServer = chatServer;
+		this.socket = socket;
+		dis = new DataInputStream(socket.getInputStream());
+	}
+
+	public void send(String json) {
+		try {
+
+		} catch (Exception e) {
+			// TODO: handle exception
+		}		
+	}
+
+	public void close() {
+		try {
+			socket.close();
+		} catch (IOException e) {
+			// TODO: handle exception
+		}
+	}
+
+}

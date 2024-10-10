@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<form action="http://localhost:8080/guestbook" id="data" method="post">
+	<table>
+		<tr>
+			<th> 작성자 </th>
+			<td>
+				<input  type="text" id="name" name="name" placeholder="이름 입력"> 
+			</td>
+			<th> 이메일 </th>
+			<td>
+				<input  type="email" id="email" name="email" placeholder="이메일 이볅"> 
+			</td>
+			<th> 홈페이지 </th>
+			<td>
+				<input  type="text" id="email" name="homepage" placeholder="이메일 이볅"> 
+			</td>
+			<th> 제목 </th>
+			<td>
+				<input  type="text" id="email" name="subject" placeholder="이메일 이볅"> 
+			</td>
+			<th> 내용 </th>
+			<td>
+				<input  type="text" id="email" name="email" placeholder="이메일 이볅"> 
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="submit" value="글작성">
+				<input type="reset" value="다시작성">
+				<button id="list">글목록</button>
+			</td>
+		</tr>
+	</table>
+</form>
+
+
+
+
+<!-- 유효성검사 -->
+</body>
+</html>
+

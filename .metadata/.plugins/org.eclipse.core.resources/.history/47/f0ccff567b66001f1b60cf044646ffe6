@@ -1,0 +1,56 @@
+package Account;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/index")
+public class AccountRegisterServlet extends HttpServlet {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    
+	String username = request.getParameter("username");
+	String password = request.getParameter("password");
+	String email = request.getParameter("email");
+	String phoneNumber = request.getParameter("phoneNumber");
+	String address = request.getParameter("address");
+	
+	// 새로운 JSON 객체 생성
+	JSONObject newAccount = new JSONObject();
+	newAccount.put("username", username);
+	newAccount.put("password", password);
+	newAccount.put("email", email);
+	newAccount.put("phoneNumber", phoneNumber);
+	newAccount.put("address", address);
+	
+	// 기존 JSON 파일을 읽어서 JSONArray로 파싱
+	JSONParser parser = new JSONParser();
+	JSONArray accountArray = null;
+	try (BufferedReader reader = new BufferedReader(new FileReader("path/to/account.json"))) {
+	    accountArray = (JSONArray) parser.parse(reader);
+	} catch (ParseException e) {
+	    e.printStackTrace();
+	}
+	
+	/*
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        // 폼 데이터 받아오기
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        String email = request.getParameter("email");
+
+        // DTO에 데이터 매핑
+        AccountDTO account = new AccountDTO(username, password, email);
+
+        // DAO를 통해 JSON으로 저장
+        AccountDAO accountDAO = new AccountDAO();
+        accountDAO.saveAccountAsJson(account);
+
+        response.getWriter().write("회원가입이 완료되었습니다!");
+    }
+	*/
+	}
+}

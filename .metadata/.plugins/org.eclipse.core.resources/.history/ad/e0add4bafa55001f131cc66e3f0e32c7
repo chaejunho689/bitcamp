@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+		.img {
+			width: 350px;
+			max-height: 500px;
+		}
+		.tr {
+			align-content: center;
+		}
+		.td {
+			align-content: center;
+		}
+		.table {
+			border : 1px solid gray;
+		}
+		
+		.table {
+			border : 1px solid gray;
+		}
+	</style>
+</head>
+<body>
+
+	<div>
+		<table>
+			<tr>
+				<th> 복숭아 </th>
+				<th> 아보카도 </th>
+				<th> 수박 </th>
+			</tr>
+			<tr>
+				<td><img src="../image/복숭아.jpg" alt="복숭아"></td>
+				<td><img src="../image/아보카도.jpg" alt="아보카도"></td>
+				<td><img src="../image/수박.jpg" alt="수박"></td>
+			</tr>
+			<tr>
+				<th>원주		</th>
+				<th>멕시코	</th>
+				<th>무등산	</th>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

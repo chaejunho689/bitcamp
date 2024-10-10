@@ -1,0 +1,11 @@
+<%@page import="Board.BoardDTO"%>
+<%@page import="Board.BoardDAO"%>
+<%@page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces="true" %> <%-- XML태그 시작전의 공백 제거 --%>
+<%
+    BoardDAO dao = BoardDAO.getInstance();
+    List<BoardDTO> boardList = dao.getBoardList();
+    request.setAttribute("boardList", boardList);
+%>
+<%=result %>

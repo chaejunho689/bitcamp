@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1 class="title"> $.ajax() 함수를 사용한 JSON 데이터 읽기(1) </h1>
+	<div class="exec">
+		<input type="button" value="JSON 데이터 가져오기"
+	</div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	
+});
+</script>
+
+</body>
+</html>

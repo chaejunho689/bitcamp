@@ -1,0 +1,14 @@
+package com.guestbook.bean;
+
+public class GuestbookDTO {
+	private String name;
+	private String email;
+	private String homepage;
+	private String subject;
+	private String content;
+
+	
+    public AccountDTO(String user_id, String user_pw, String user_name, String user_email, String user_address, String user_phonenumber) {
+
+    }
+}

@@ -1,0 +1,26 @@
+package com.guestbook.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+public class GuestbookDAO {
+	private String driver = "oracle.jdbc.driver.OracleDriver";
+	private String url ="jdbc:oracle:thin:@192.168.0.43:1521:xe";
+	private String username = "c##java";
+	private String password = "1234";
+	
+	private Connection con;
+	private PreparedStatement pstmt;
+	private ResultSet rs;
+	
+	private static GuestbookDAO instance = new GuestbookDAO();
+}
+
+
+/*
+1.Driver loading
+2. connection
+3.preparedStatement
+ 
+*/

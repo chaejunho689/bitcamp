@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+		.img {
+			width: 350px;
+			max-height: 500px;
+		}
+	</style>
+</head>
+<body>
+
+	<div>
+		<table>
+			<tr>
+				<th> 복숭아 </th>
+				<th> 아보카도 </th>
+				<th> 수박 </th>
+			</tr>
+			<tr>
+				<td><img src="../image/복숭아.jpg" alt="복숭아"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+			
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

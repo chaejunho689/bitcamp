@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 공통 GNB -->
+<div id="gnb-placeholder"></div>
+<script>
+	// JavaScript 함수로 외부 HTML 파일 로드
+	function loadGNB() {
+		$.get('gnb.html', function(data) {
+			$('#gnb-placeholder').html(data);
+			updateLoginStatus();
+		});
+	}
+
+	// 로그인 상태에 따라 링크의 표시 여부를 설정
+	function updateLoginStatus() {
+		if (sessionStorage.getItem('isLoggedIn') === 'true') {
+			$('#login_y_link').show();
+			$('#login_n_link').hide();
+			$('#login_n_link2').hide();
+			$('#login_y_link2').show();
+		} else {
+			$('#login_y_link').hide();
+			$('#login_n_link').show();
+			$('#login_n_link2').show();
+			$('#login_y_link2').hide();
+		}
+	}
+</script>
+
+
+</body>
+</html>

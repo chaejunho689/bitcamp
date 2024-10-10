@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="container">
+		<h1 id="title"> </h1>
+		<div class="box"></div>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	</div>
+	<p></p>
+	<pre></pre>
+	<pre name="source"></pre>
+	
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"> </script>
+<script type="text/javascript">
+
+</script>
+
+</body>
+</html>

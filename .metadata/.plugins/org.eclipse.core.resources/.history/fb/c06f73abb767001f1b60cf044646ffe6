@@ -1,0 +1,37 @@
+<%@page import="Account.AccountDTO"%>
+<%@page import="Account.AccountDAO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces="true" %> <%-- XML태그 시작전의 공백 제거 --%>
+<%
+
+	String login_id = request.getParameter("login_id");
+	String login_pw = request.getParameter("login_pw");
+	String result = "";
+	
+    // AccountDAO 인스턴스 생성
+    AccountDAO accountDAO = new AccountDAO();
+    
+    // 로그인 결과 확인
+    String loginResult = accountDAO.login(login_id, login_pw);
+    
+    // 로그인 성공 여부를 판단하여 JSON 형식으로 응답
+    if ("success".equals(loginResult)) {
+        // 로그인 성공 시, 사용자 ID를 AccountDAO에서 받아옴
+        AccountDTO account = accountDAO.getAccountById(login_id);
+        String userId = account.getUserId(); // AccountDTO에서 사용자 ID를 가져옴
+        
+        // JSON 응답 생성
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        response.getWriter().write("{\"status\": \"success\", \"userId\": \"" + userId + "\"}");
+    } else {
+        // 로그인 실패 시 JSON 응답
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        response.getWriter().write("{\"status\": \"fail\"}");
+    }
+%>
+<%=result %>
+
+

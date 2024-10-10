@@ -1,0 +1,6 @@
+$(function() {
+	$('#join').submit(function(){
+	return false;
+	
+});	
+});

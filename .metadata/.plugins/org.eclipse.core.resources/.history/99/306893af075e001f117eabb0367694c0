@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button id ="question" onclick="question()"> 문제 생성 </button>
+	<span id = "random1"> ? </span>  
+	<span> + </span>
+	<span id = "random2"> ? </span>
+	<span> = </span>
+	<span id = "result"> ? </span>
+	<button id =""result"" onclick=""result"()"> 결과 보기 </button>
+	
+	 
+<script type="text/javascript">
+function question() {
+	var random1 = Math.floor(Math.random() * 10);
+	var random2 = Math.floor(Math.random() * 10);
+
+	var random1_tag = document.getElementById("random1");
+	var random2_tag = document.getElementById("random2");
+	
+	random1_tag.innerText = random1;
+	random2_tag.innerText = random2;
+}
+
+function result() {
+	var result = random1 + random2;
+	var result_tag = document.getElementById("result");
+	result_tag.innerText = result;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+package com.guestbook.dao;
+
+public class GuestbookDAO {
+
+}
+
+
+/*
+1.Driver loading
+2. connection
+3.preparedStatement
+ 
+*/

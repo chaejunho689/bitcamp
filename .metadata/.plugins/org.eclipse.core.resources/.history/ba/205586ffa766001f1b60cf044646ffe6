@@ -1,0 +1,114 @@
+$(function() {    
+	// 로그인 성공 시 세션 스토리지 설정
+	function setLoginSessionStorage() {
+	    sessionStorage.setItem('isLoggedIn', 'true');
+	}
+	
+	function logout() {
+	    sessionStorage.setItem('isLoggedIn', 'false');
+	}
+
+	// 세션 스토리지 확인 예시
+	function getLoginSessionStorage() {
+	    return sessionStorage.getItem('isLoggedIn');
+	}
+	
+	// GNB HTML을 로드하고 로그인 상태를 업데이트
+	 function loadGNB() {
+	      $.get('gnb.html', function(data) {
+	          $('#gnb-placeholder').html(data);
+	          updateLoginStatus();
+	      });
+	 }
+	 
+	 // 페이지 로드 시 GNB 로드
+	 $(document).ready(function() {
+	     loadGNB();
+	 });
+	 
+	var exampleModal = document.getElementById('exampleModal')
+	exampleModal.addEventListener('show.bs.modal', function (event) {
+		var button = event.relatedTarget
+
+		$('#modal-submit').click(function(){
+			let formData = {
+				user_name: $('#user_name').val(),
+				user_id: $('#user_id').val(),
+				user_pw: $('#user_pw').val(),
+				user_email: $('#user_email1').val() + '@' + $('#user_email2').val(),
+				user_phonenumber: $('#user_phonenumber').val(),
+				user_address: $('#user_address').val(),
+			};
+			
+			$.ajax({
+				type : 'get',
+				url : './jsp/register.jsp',
+				data : formData,
+				success : function(response){
+					alert('회원가입이 완료되었습니다.');
+				},
+				error : function(e) {
+					console.log(e);
+				},
+				complete: function(){
+					$('#exampleModal').modal('hide');
+				}
+			})
+		});
+		var recipient = button.getAttribute('data-bs-whatever')
+		var modalTitle = exampleModal.querySelector('.modal-title')
+		var modalBodyInput = exampleModal.querySelector('.modal-body input')
+		
+		modalTitle.textContent = 'New message to ' + recipient
+		modalBodyInput.value = recipient
+	})
+	
+	
+	var loginModal = document.getElementById('loginModal')
+	loginModal.addEventListener('show.bs.modal', function (event) {
+	var button = event.relatedTarget
+		
+		$('#modal-login-submit').click(function(){
+			let formData = {
+				login_id: $('#login_id').val(),
+				login_pw: $('#login_pw').val(),
+			};
+			
+			$.ajax({
+				type : 'get',
+				url : './jsp/login.jsp',
+				data : formData,
+				success : function(loginResult){
+	                if(loginResult == "success"){
+	                    alert('로그인에 성공했습니다.');
+	                    setLoginSessionStorage();
+	                    location.reload(true);
+	                } else {
+	                    alert('로그인에 실패했습니다.');	                
+	                }
+				},
+				error : function(e) {
+					alert('로그인에 실패했습니다.');
+				},
+				complete: function(){
+					$('#loginModal').modal('hide');
+				}
+			})
+		});
+
+		
+		var recipient = button.getAttribute('data-bs-whatever')
+		var modalTitle = exampleModal.querySelector('.modal-title')
+		var modalBodyInput = exampleModal.querySelector('.modal-body input')
+		
+		modalTitle.textContent = 'New message to ' + recipient
+		modalBodyInput.value = recipient
+	})
+	
+	$('#login_y_link2').click(function(){
+		logout();
+		alert('로그아웃 되었습니다.');
+		location.reload(true);
+
+	});
+});

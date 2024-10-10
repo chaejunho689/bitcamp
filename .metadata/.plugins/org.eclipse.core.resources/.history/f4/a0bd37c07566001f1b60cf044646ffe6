@@ -1,0 +1,26 @@
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/registerAccount")
+public class RegisterAccountServlet extends HttpServlet {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        // 폼 데이터 받아오기
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        String email = request.getParameter("email");
+
+        // DTO에 데이터 매핑
+        AccountDTO account = new AccountDTO(username, password, email);
+
+        // DAO를 통해 JSON으로 저장
+        AccountDAO accountDAO = new AccountDAO();
+        accountDAO.saveAccountAsJson(account);
+
+        response.getWriter().write("회원가입이 완료되었습니다!");
+    }
+}

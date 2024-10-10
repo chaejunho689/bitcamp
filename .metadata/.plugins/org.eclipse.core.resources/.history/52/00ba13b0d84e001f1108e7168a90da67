@@ -1,0 +1,17 @@
+package stream;
+
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor //생성자 모두생성
+class Food {
+	String name;
+	int calorie;
+}
+
+public class StreamMain02 {
+	public static void main(String[] args) {
+		
+	}
+}

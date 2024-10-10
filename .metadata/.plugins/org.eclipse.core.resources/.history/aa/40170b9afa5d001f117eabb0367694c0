@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+var a = Number("a");
+document.write("a = " + a + "<br>"); // NaN (Not a Number)
+
+var sum = a + 1;
+document.write("sum = " + sum + "<br>");
+
+var str = a + "str";
+document.write("str = " + str + "<br>"); 
+
+</script>
+
+</body>
+</html>

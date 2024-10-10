@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div>
+
+<form id="data">
+	<label>이름</label>
+	<input id="name">
+	<label>나이</label>
+	<input id="age">
+</form>
+<button id="submit" form="data"> 보내기 </button>
+<button id="cancel"> 취소 </button>
+</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+package array;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class Lotto {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+
+		System.out.print("현금 입력 : ");
+		int money = scan.nextInt();
+		
+		int lotto_number = (new Random().nextInt(100)) + 1; // 1~100까지의 난수 발생
+		
+		int[] lotto_array;
+		lotto_array = new int[5];
+		
+		
+		
+
+	}
+}

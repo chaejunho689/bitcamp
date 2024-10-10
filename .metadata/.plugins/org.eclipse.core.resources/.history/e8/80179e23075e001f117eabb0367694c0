@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<span>
+	<p id = "random1"> ? </p>  
+	<p> + </p>
+	<p id = "random2"> ? </p>
+	<p> = </p>
+	<p id = "result"> ? </p>
+	<button id ="question" value="문제 생성" onclick="question()">	</button>
+	 </span>
+	 
+<script type="text/javascript">
+function question() {
+	var random1 = Math.floor(Math.random() * 10);
+	var random2 = Math.floor(Math.random() * 10);
+}
+
+</script>
+</body>
+</html>

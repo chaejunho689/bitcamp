@@ -1,0 +1,71 @@
+package Account;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class AccountDAO {
+	private String driver = "oracle.jdbc.driver.OracleDriver";
+	private String url ="jdbc:oracle:thin:@192.168.0.43:1521:xe";
+	private String username = "c##java";
+	private String password = "1234";
+
+	private Connection con;
+	private PreparedStatement pstmt;
+	private ResultSet rs;
+
+	public String session_id = null;
+	public String session_pwd = null;
+	public String session_name = null;
+	public int session_auth;
+	private boolean login_yn;
+
+	private static AccountDAO instance = new AccountDAO();
+	
+	public AccountDAO() {
+		try {
+			Class.forName(driver);
+			//			System.out.println("driver loading...");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static AccountDAO getInstance() {
+		return instance;
+	}
+	
+	public void getConnection() {
+		try {
+			con = DriverManager.getConnection(url, username, password);
+			//			System.out.println("Oracle Connect...");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void register(aAcountDTO accountDTO) {
+		getConnection();
+		String sql = "INSERT INTO food_account(NAME, ID, PWD, code) VALUES(?, ?, ?, 0)";
+
+		try {
+			pstmt = con.prepareStatement(sql);
+
+			pstmt.setString(1,accountDTO.getName());
+			pstmt.setString(2,accountDTO.getId());
+			pstmt.setString(3,accountDTO.getPwd());
+
+			pstmt.executeUpdate();
+			System.out.println("회원가입이 완료되었습니다.");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+}

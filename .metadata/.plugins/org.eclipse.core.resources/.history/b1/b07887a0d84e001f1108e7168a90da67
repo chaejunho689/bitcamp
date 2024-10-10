@@ -1,0 +1,15 @@
+package stream;
+
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+class Food {
+	String name;
+	int calorie;
+}
+
+public class StreamMain02 {
+	public static void main(String[] args) {
+		
+	}
+}

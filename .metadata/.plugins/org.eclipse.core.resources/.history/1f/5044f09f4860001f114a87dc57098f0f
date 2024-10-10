@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>회원가입</h1>
+	<form name="form1" id="join">
+		<div id="input">
+			<h3>아이디</h3>
+			<input type="text" name="user_id" />
+
+			<h3>비밀번호</h3>
+			<input type="password" name="user_pw" />
+
+			<h3>성별</h3>
+			<label><input type="radio" name="gender" value="/" /> </label> 
+			<label><input type="radio" name="gender" value="" />
+				</labe1>
+		</div>
+	</form>
+
+	<script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"> </script>
+<script type="text/javascript">
+
+</script>
+
+</body>
+</html>
+
+<!-- 
+jQuery 이벤트 정의하는 방법
+
+$(function() {
+   $("셀렉터").이벤트이름(function() {
+      ... 처리 내용 ...
+   });
+});
+ -->

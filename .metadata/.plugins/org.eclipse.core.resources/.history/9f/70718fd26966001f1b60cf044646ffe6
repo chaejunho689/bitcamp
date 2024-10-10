@@ -1,0 +1,16 @@
+package Board;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter	
+public class BoardDTO {
+		private int board_code; 				//
+		private String board_title; 			//
+		private String board_content; 			//
+		private String board_hit; 			//
+		private String board_date; 	//
+		private String board_address; 		//
+		private String board_email; 			//
+}

@@ -1,0 +1,21 @@
+package stream;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@NoArgsConstructor
+@AllArgsConstructor //매개변수가 있는 생성자 모두생성
+@Getter
+@Setter
+class Food {
+	String name;
+	int calorie;
+}
+
+public class StreamMain02 {
+	public static void main(String[] args) {
+		
+	}
+}

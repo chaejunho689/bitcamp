@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/event.css">
+</head>
+<body>
+	<h1>Hover 이벤트 확인하기</h1>
+	<div id="input">Mouse Over or Out</div>
+	<h2>결과</h2>
+	<div id="result"></div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"> </script>
+<script type="text/javascript">
+$(function(){
+	var down_count = 0;
+	var up_count = 0;
+	
+	$('#input > input[type="text"]'.keydown(function(){
+		down_count++;
+		$("#result").html("down_count : " + down_count )
+	}))
+	
+	$('#input > input[type="text"]'.keyUP(function(){
+		down_count++;
+	$("#result").html("down_count : " + down_count )
+	}))
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+package network;
+
+public class ChatHandler {
+	
+	String chatName;
+	String clientIp;
+
+	public ChatHandler(ChatServer chatServer)
+
+}

@@ -1,0 +1,18 @@
+<%@page import="Account.AccountDTO"%>
+<%@page import="Account.AccountDAO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces="true" %> <%-- XML태그 시작전의 공백 제거 --%>
+<%
+
+	String login_id = request.getParameter("login_id");
+	String login_pw = request.getParameter("login_pw");
+	String result = "";
+	
+	AccountDAO accountDAO = new AccountDAO();
+	
+	String loginResult = accountDAO.login(login_id, login_pw);
+	
+	out.print(loginResult);
+%>
+<%=result %>

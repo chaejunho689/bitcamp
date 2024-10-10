@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;count&apos; in &apos;abstact_.CalendarEx.CalendarDisplay(...)&apos; to &apos;week&apos;&#x0D;&#x0A;- Original project: &apos;07_abstract&apos;&#x0D;&#x0A;- Original element: &apos;abstact_.CalendarEx.CalendarDisplay(int, int, String, String).count&apos;&#x0D;&#x0A;- Renamed element: &apos;count&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;count&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;abstact_{CalendarEx.java[CalendarEx~CalendarDisplay~I~I~QString;~QString;@count!1676!1689!1680!1684!I!0!false" name="week" references="true" stamp="1721270020136" version="1.0"/>
+</session>

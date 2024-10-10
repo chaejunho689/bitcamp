@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+function f(x,y) {
+	var z = x + y;
+	
+	if(z < 10) {
+		return;
+	}
+	
+	return z;
+	
+}
+
+
+</script>
+</body>
+</html>

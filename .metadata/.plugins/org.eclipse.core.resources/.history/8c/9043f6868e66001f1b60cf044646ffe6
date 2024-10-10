@@ -1,0 +1,47 @@
+package Account;
+
+public class AccountDTO {
+    private String user_id;
+    private String user_pw;
+    private String user_email;
+    private String user_email;
+    private String user_email;
+    private String user_email;
+
+
+    public AccountDTO(String user_id, String user_pw, String user_email, user_address, user_phonnumber) {
+        this.user_id = user_id;
+        this.user_pw = user_pw;
+        this.user_email = user_email;
+        this.user_address = user_address;
+        this.user_phonnumber = user_phonnumber;
+        this.user_email = user_email;
+    }
+
+	public String getuser_id() {
+		return user_id;
+	}
+
+	public void setuser_id(String user_id) {
+		this.user_id = user_id;
+	}
+
+	public String getuser_pw() {
+		return user_pw;
+	}
+
+	public void setuser_pw(String user_pw) {
+		this.user_pw = user_pw;
+	}
+
+	public String getuser_email() {
+		return user_email;
+	}
+
+	public void setuser_email(String user_email) {
+		this.user_email = user_email;
+	}
+
+    // Getter와 Setter 추가
+    
+}

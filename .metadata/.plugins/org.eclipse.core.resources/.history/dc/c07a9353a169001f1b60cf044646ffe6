@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<form>
+	<table>
+		<tr>
+			<label > 작성자 </label>
+			<input  type="text" id="name" name="name" placeholder="이름입력"> 
+		</tr>
+	
+	</table>
+</form>
+
+
+
+
+<!-- 유효성검사 -->
+</body>
+</html>
+

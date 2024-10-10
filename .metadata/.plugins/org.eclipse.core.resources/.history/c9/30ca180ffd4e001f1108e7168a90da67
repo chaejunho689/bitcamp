@@ -1,0 +1,64 @@
+package network;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.Socket;
+import java.net.UnknownHostException;
+import java.util.Scanner;
+
+import org.json.JSONObject;
+
+public class ChatClient {
+	Socket socket;
+	DataInputStream dis;
+	DataOutputStream dos;
+	String chatName;
+	
+	public void connect() throws UnknownHostException, IOException {
+		socket = new Socket("localhost", 9500);
+		dis = new DataInputStream(socket.getInputStream());
+		dos = new DataOutputStream(socket.getOutputStream());
+		
+		System.out.println("서버에 연결되었음");
+	}
+	
+	//서버로부터 JSON 데이터 받기
+	public void receive() {
+		
+	}
+	
+	//서버로부터 JSON 데이터 보내기
+	public void send(String json) throws IOException {
+			dos.writeUTF(json);
+			dos.flush();
+	}
+	
+	//서버로부터 JSON 데이터 보내기
+	public void close(String json) {
+		try {
+			socket.close();
+		} catch (IOException e) {
+		}
+	}
+	
+	public static void main(String[] args) {
+		try {
+			ChatClient chatClient = new ChatClient();
+			chatClient.connect();
+			
+			Scanner scan = new Scanner(System.in);
+			System.out.println("닉네임 입력");
+			chatClient.chatName = scan.nextLine();
+			
+			JSONObject jsonObject = new JSONObject();
+			jsonObject.put("command","enter");
+			jsonObject.put("data", chatClient.chatName);
+			
+		} catch (IOException e) {
+			System.out.println("서버와 연결이 안 됨");
+		}
+	}
+
+
+}

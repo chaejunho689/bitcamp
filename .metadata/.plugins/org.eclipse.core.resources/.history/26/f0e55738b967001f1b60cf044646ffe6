@@ -1,0 +1,37 @@
+<%@page import="Account.AccountDTO"%>
+<%@page import="Account.AccountDAO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces="true" %> <%-- XML태그 시작전의 공백 제거 --%>
+<%
+
+String login_id = request.getParameter("login_id");
+String login_pw = request.getParameter("login_pw");
+
+AccountDAO accountDAO = new AccountDAO();
+String loginResult = accountDAO.login(login_id, login_pw);
+
+if ("success".equals(loginResult)) {
+    AccountDTO account = accountDAO.get(login_id);
+    String userId = account.getUser_id();
+    
+    // 쿠키 설정
+    Cookie userIdCookie = new Cookie("userId", userId);
+    userIdCookie.setMaxAge(60 * 60); // 쿠키 유효 시간 설정 (1시간)
+    response.addCookie(userIdCookie);
+    
+    // JSON 응답 생성
+    response.setContentType("application/json");
+    response.setCharacterEncoding("UTF-8");
+    response.getWriter().write("{\"status\": \"success\", \"userId\": \"" + userId + "\"}");
+} else {
+    response.setContentType("application/json");
+    response.setCharacterEncoding("UTF-8");
+    response.getWriter().write("{\"status\": \"fail\"}");
+}
+    
+    
+%>
+<%=result %>
+
+

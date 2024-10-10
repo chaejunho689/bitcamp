@@ -1,0 +1,26 @@
+<!-- gnb -->
+<nav class="navbar bg-body-tertiary" id="navbar_top">
+	<div class="container-fluid" id="navbar_top">
+	<ul class="nav nav-underline justify-content-end" id="navbar_top">
+		<li class="nav-item"><a class="nav-link active"
+			aria-current="page" href="./index.html">HOME</a></li>
+		<li class="nav-item"><a class="nav-link" href="#">CAREER</a></li>
+		<li class="nav-item"><a class="nav-link" href="#">SKILL</a></li>
+		<li class="nav-item"><a class="nav-link" href="#">PROJECT</a></li>
+		<li class="nav-item"><a class="nav-link" href="#">EDUCATION</a></li>
+		<li class="nav-item"><a class="nav-link" href="./contact.html">CONTACT</a></li>
+	</ul>
+	<button class="navbar-toggler" style="border: 0px;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+		<div class="collapse navbar-collapse " id="navbarTogglerDemo01">
+			<a class="navbar-brand" href="#">ACCOUNT</a>
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				<li class="nav-item" id="login_n_link"><a class="nav-link" href="" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="">REGISTER</a></li>
+				<li class="nav-item" id="login_n_link2"><a class="nav-link" href="" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-whatever="">LOGIN</a></li>
+				<li class="nav-item" id="login_y_link"><a class="nav-link" href="./update.html">UPDATE</a></li>
+				<li class="nav-item" id="login_y_link2"><a class="nav-link" href="">LOGOUT</a></li> <!-- model창 -->
+			</ul>
+		</div>
+	</div>
+</nav>

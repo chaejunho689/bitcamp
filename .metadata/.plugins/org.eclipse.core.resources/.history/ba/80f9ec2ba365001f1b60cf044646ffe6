@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1 class="title"> $.ajax() 함수를 사용한 JSON 데이터 읽기(1) </h1>
+	<div class="exec">
+		<input type="button" value="JSON 데이터 가져오기" id="mybtn" />
+	</div>
+	<div class="console" id="result"></div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$('#mybtn').click(function(){
+		$.ajax({
+			type : 'get',
+			url : '../json/json01.json',
+			dataType : 'json', //서버로부터 반환되는 데이터 타입
+			success: function(data){},
+			error : function(e) {
+				console.log(e);
+				
+			}
+		})		
+	})
+});
+</script>
+
+</body>
+</html>

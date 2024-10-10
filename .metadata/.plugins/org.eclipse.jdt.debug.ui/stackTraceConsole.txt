@@ -1,0 +1,3 @@
+		case 9 :
+			grade = 'A';
+			break;

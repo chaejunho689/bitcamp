@@ -1,0 +1,50 @@
+package com.guestbook.service;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.guestbook.bean.GuestbookDTO;
+import com.guestbook.dao.GuestbookDAO;
+
+@WebServlet("/list")
+public class GuestbookLiskServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// 데이터
+		
+		// DB
+		GuestbookDAO dao = GuestbookDAO.getInstance();
+	    List<GuestbookDTO> guestbookList = dao.guestbookList();
+	    
+		String name = request.getParameter("name");
+		String email = request.getParameter("email");
+		String homepage = request.getParameter("homepage");
+		String subject = request.getParameter("subject");
+		String content = request.getParameter("content");
+		
+		for (int i = 0; i < guestbookList.size(); i++) {
+			 //응답
+		response.setContentType("text/html; charset=UTF-8");
+		PrintWriter out = response.getWriter();
+		out.println("<html>");
+		out.println("<body>");
+		if(guestbookList != null) {
+			for(GuestbookDTO guestbookDTO)
+		}
+		
+		out.println("</body>");
+		out.println("<html>");
+		}
+    
+
+	}
+
+}

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<span> 
+	<button id ="eventStart" value="문제 생성" onclick="question()">	</button>
+	 </span>
+</body>
+</html>

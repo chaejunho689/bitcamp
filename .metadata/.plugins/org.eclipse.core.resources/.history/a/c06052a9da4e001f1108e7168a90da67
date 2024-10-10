@@ -1,0 +1,38 @@
+package stream;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@NoArgsConstructor
+@AllArgsConstructor //매개변수가 있는 생성자 모두생성
+@Getter
+@Setter
+class Food {
+	String name;
+	int calorie;
+}
+
+public class StreamMain02 {
+	public static void main(String[] args) {
+		Food aa = new Food("돈까스", 775);
+		Food bb = new Food("탕수육", 112);
+		Food cc = new Food("라면", 675);
+		Food dd = new Food("떡볶이", 654);
+		Food ee = new Food("짜장면", 740);
+
+		List<Food> list = new ArrayList<Food>();
+		list.add(aa);
+		list.add(bb);
+		list.add(cc);
+		list.add(dd);
+		list.add(ee);
+		
+		Collections.sort(list);
+	}
+}

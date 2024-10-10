@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+let score = prompt("당신의 점수 입력 : ");
+
+switch(Math.floor(score/10)) {
+	case 10 :
+	case 9 : grade = "A학점"; break;
+	case 8 : grade = "B학점"; break;
+	case 7 : grade = "C학점"; break;
+	case 6 : grade = "D학점"; break;
+	default : grade = "F학점"	
+}
+document.write("당신의 점수는 " + score + "점 이므로 " + grade + " 입니다."); 
+
+
+let num = 85.9876543
+console.log(num.toFixed(3)); // 85.988
+console.log(num.toFixed(0)); // 86
+
+let a = "1.7"
+console.log(a+3);
+console.log(parseInt(a) + 3); // 4
+console.log(Math.floor(a) + 3); // 4
+console.log(Number(a) + 3); // 4.7
+console.log(~~(a) + 3); // 4.7 // 4,  Math.floor()와 비슷
+
+
+</script>
+</body>
+</html>

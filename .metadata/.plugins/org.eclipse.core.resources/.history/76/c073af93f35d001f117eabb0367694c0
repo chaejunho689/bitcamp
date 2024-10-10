@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+function f(x,y) { 
+	var z = x + y;
+	
+	if(z < 10) {
+		return; // 함수를 벗어나라
+	}
+	return z; // 반환
+}
+
+f(1,3);
+</script>
+</body>
+</html>

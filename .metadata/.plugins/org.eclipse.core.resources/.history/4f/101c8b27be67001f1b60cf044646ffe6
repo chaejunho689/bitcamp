@@ -1,0 +1,46 @@
+<%@page import="Account.AccountDTO"%>
+<%@page import="Account.AccountDAO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces="true" %> <%-- XML태그 시작전의 공백 제거 --%>
+<%
+
+String login_id = request.getParameter("login_id");
+String login_pw = request.getParameter("login_pw");
+
+// AccountDAO 인스턴스 생성
+AccountDAO accountDAO = new AccountDAO();
+
+// 로그인 처리
+String loginResult = accountDAO.login(login_id, login_pw);
+
+// 로그 출력
+System.out.println("로그인 시도: ID=" + login_id + ", PW=" + login_pw + ", 결과=" + loginResult);
+
+// 로그인 성공 여부를 판단하여 JSON 형식으로 응답
+if ("success".equals(loginResult)) {
+    // 로그인 성공 시, 사용자 ID를 AccountDAO에서 받아옴
+    AccountDTO account = accountDAO.getAccountById(login_id);
+    if (account != null) {
+        String userId = account.getUser_id(); // AccountDTO에서 사용자 ID를 가져옴
+
+        // JSON 응답 생성
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        response.getWriter().write("{\"status\": \"success\", \"userId\": \"" + userId + "\"}");
+        System.out.println("로그인 성공 및 사용자 정보 반환: ID=" + userId);
+    } else {
+        System.out.println("로그인 성공했지만 사용자 정보 조회 실패: ID=" + login_id);
+        // 만약 계정 정보가 없는 경우 (이론적으로는 발생하지 않음)
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        response.getWriter().write("{\"status\": \"fail\"}");
+    }
+} else {
+    // 로그인 실패 시 JSON 응답
+    response.setContentType("application/json");
+    response.setCharacterEncoding("UTF-8");
+    response.getWriter().write("{\"status\": \"fail\"}");
+    System.out.println("로그인 실패");
+}
+%>

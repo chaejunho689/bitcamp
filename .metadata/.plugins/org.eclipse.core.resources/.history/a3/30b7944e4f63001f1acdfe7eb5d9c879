@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<ul id="thumb">
+		<li>
+			<a href="../image/1.jpg" class="item"><img src=".jpg" ../image/1.jp ></a>
+		</li>
+	</ul>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1> 회원가입 </h1>
+	<form name="form1" id="join">
+		<div id="input">
+		</div>
+	</form>
+
+</body>
+</html>
+
+<!-- 
+jQuery 이벤트 정의하는 방법
+
+$(function() {
+   $("셀렉터").이벤트이름(function() {
+      ... 처리 내용 ...
+   });
+});
+ -->

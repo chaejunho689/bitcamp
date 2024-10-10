@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/reset.css">
+</head>
+<body>
+	<h1 class="title"> 아이디 중복검사 </h1>
+	<div class="exec">
+		<form>
+			<input type="text" name="user_id">
+			<input type="button" name="id_check">
+		</form>
+	</div>
+	
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	
+});
+</script>
+</body>
+</html>
+<!-- 
+위의 코드에서 data, $(data)의 차이
+
+data
+=> AJAX 요청으로부터 반환된 데이터이다.
+=> 문자열 또는 XML 등의 형식이다.
+=> 데이터를 꺼내려면 DOM 또는 JavaScript를 사용해야 한다.
+
+$(data)
+=> jQuery 함수 $()를 사용하여 데이터를 jQuery 객체로 변환하는 것이다.
+=> AJAX로 가져온 데이터를 jQuery 객체로 변환하여 jQuery 함수를 사용할 수 있게 한다. 
+ -->
+ 
+ 
+ <!-- 
+위의 코드에서 data, $(data)의 차이
+
+1. data
+=> AJAX 요청으로부터 반환된 데이터이다.
+=> 문자열 또는 XML 등의 형식이다.
+=> 데이터를 꺼내려면 DOM 또는 JavaScript를 사용해야 한다.
+
+2. $(data)
+=> jQuery 함수 $()를 사용하여 데이터를 jQuery 객체로 변환하는 것이다.
+=> AJAX로 가져온 데이터를 jQuery 객체로 변환하여 jQuery 함수를 사용할 수 있게 한다. 
+ -->

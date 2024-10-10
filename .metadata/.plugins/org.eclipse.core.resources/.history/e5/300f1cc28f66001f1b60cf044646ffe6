@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>	
+<br/>	 ${user_no}
+<br/>	 ${user_id} 			
+<br/>	 ${user_pw} 			
+<br/>	 ${user_name}			
+<br/>	 ${user_phone_number} 	
+<br/>	 ${user_address} 		
+<br/>	 ${user_email} 			
+</body>
+</html>

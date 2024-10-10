@@ -1,0 +1,5 @@
+package com.guestbook.bean;
+
+public class GuestbookDTO {
+
+}

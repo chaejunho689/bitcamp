@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	span {
+		display: inline-block;
+		text-align: center;
+		border: 1px solid grey;
+		border-radius: 50%;
+		padding : 5px;
+		font-size: 20px;
+	}
+</style>
+</head>
+<body>
+
+<span class="lotto">
+</span>
+<span class="lotto">
+</span>
+<span class="lotto">
+</span>
+<span class="lotto">
+</span>
+<span class="lotto">
+</span>
+<span class="lotto">
+</span>
+<span class="lotto">
+</span>
+
+<script type="text/javascript">
+	var getClass = document.getElementsByClassName.bind(document);
+	var mytag = getClass("lotto");
+	
+	var lottoArr = [6]; 
+	var temp = 0;
+	
+	//로또 추첨
+	//중복 검사
+	for(var j = 0; j < 7; j++) {
+		temp = Math.floor(Math.random() * 45 + 1);
+		for(var i = 0; i < lottoArr.length; i++) {
+			console.log("검사" + lottoArr[i]);
+			if(lottoArr[i] == temp || !lottoArr[i]) {
+				console.log("겹치는lottoArr[i]" + lottoArr[i] + " / 중복발생 temp : " + temp );
+				temp = Math.floor(Math.random() * 45 + 1);
+				console.log("새로생성 : " + temp );
+			} else {
+				lottoArr[j] = temp;
+				console.log("확정 로또번호 lottoArr[j]" + lottoArr[j]);
+			}
+		}
+	}	
+	
+	for(var i = 0; i < lottoArr.length; i++) {
+	    var color;
+	    var font_color = 'black';
+	    if (lottoArr[i] <= 10) {
+	        color = 'yellow';
+	    } else if (lottoArr[i] <= 20) {
+	        color = 'blue';
+	        font_color = 'white';
+	    } else if (lottoArr[i] <= 30) {
+	        color = 'red';
+	    } else if (lottoArr[i] <= 40) {
+	        color = 'grey';
+	    } else if (lottoArr[i] <= 45) {
+	        color = 'green';
+	        font_color = 'white';
+	    }
+	    mytag[i].style.backgroundColor = color;
+	    mytag[i].style.color = font_color;
+	    
+		
+			mytag[i].innerHTML += lottoArr[i];
+		}
+	}
+	
+</script>
+</body>
+</html>
+<!-- 
+practice04.html
+[문제] 로또
+- 1~45사이의 난수 6개를 발생
+- 중복숫자는 안된다. -->

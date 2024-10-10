@@ -1,0 +1,18 @@
+<%@page import="Account.AccountDAO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces="true" %> <%-- XML태그 시작전의 공백 제거 --%>
+<%
+	String user_id = request.getParameter("user_id");
+	String user_pw = request.getParameter("user_pw");
+	String user_name = request.getParameter("user_name");
+	String user_email = request.getParameter("user_email");
+	String user_address = request.getParameter("user_address");
+	String user_phonenumber = request.getParameter("user_phonenumber");
+	String result = "";
+	
+	AccountDAO AccountDAO = new AccountDAO();
+		
+	result = accountDAO.register();
+
+<%=result %>

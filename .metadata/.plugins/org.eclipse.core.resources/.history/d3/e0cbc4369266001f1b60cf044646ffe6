@@ -1,0 +1,20 @@
+<%@page import="Account.AccountDAO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	String user_id = request.getParameter("user_id");
+	String user_pw = request.getParameter("user_pw");
+	String user_name = request.getParameter("user_name");
+	String user_email = request.getParameter("user_email");
+	String user_address = request.getParameter("user_address");
+	String user_phonenumber = request.getParameter("user_phonenumber");
+	String result = "";
+	
+	if(id != null){
+		MemberDAO dao = new MemberDAO();
+		
+		result = dao.isExists(id);
+	}
+%>
+<%=result %>
+출처: https://terianp.tistory.com/95 [Terian의 IT 도전기:티스토리]
